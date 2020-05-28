@@ -1,26 +1,22 @@
 import React, { Component } from "react";
 import Counters from "../Counters/Counters";
 export default class CounterRender extends Component {
+  //this render() methods renders the total items
   render() {
+    console.log("counterRender render");
     return (
       <div>
         <button
           type="button"
-          className="btn btn-dark mx-3 my-2"
+          className="btn btn-dark mx-3 my-2 fas fa-redo-alt "
           onClick={this.props.handleRefresh}
-        >
-          <i className="fas fa-redo-alt"></i>
-        </button>
-        <button type="button" className="btn btn-dark mx-3 my-2">
-          <i className="fa fa-refresh" aria-hidden="true"></i>
-        </button>
+        ></button>
+
         {this.props.counters.map((counter) => {
           return (
             <Counters
-              index={counter.id}
               counter={counter}
               key={counter.id}
-              value={counter.value}
               onIncrement={this.props.onIncrement}
               onDecrement={this.props.onDecrement}
               handleRemove={this.props.handleRemove}
