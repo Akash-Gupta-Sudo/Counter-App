@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class Navbar extends Component {
   render() {
+    console.log("Navbar render");
     return (
       <div>
         <nav className="nav bg-light ">
